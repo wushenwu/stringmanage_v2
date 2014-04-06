@@ -1,0 +1,29 @@
+相对于stringmanage_v1，有如下变化：
+1)分配表g_add_table, g_del_table 
+  由原来的一维数组管理，改为了结构体数组管理
+ 
+2)原有用大数组存放字符的方法，因为malloc的引入，而有如下几种：
+  a) NO_USE_MALLOC: 原有大数组的方式
+  b) USE_MALLOC_V1: 使用malloc 在一开始申请大数组，后续处理同NO_USE_MALLOC
+  	            变化意义不大
+
+  c) USE_MALLOC_V2: 已删除空间可再分配。
+	            所以每次添加字符串时，可能需要malloc，
+	            也可能对g_del_table中已删除空间再利用。
+                    每次删除字符串时，不立即进行free, 采用g_del_table进行			      维护
+
+                    g_add_table, g_del_table中的记录在进程退出前集中free.
+	            (take care of this )
+
+  d) USE_MALLOC_V3: 完全的采用malloc 和free.
+                    每次删除字符串时，直接进行free掉，不进行再分配。
+
+3) 针对上面几种情况，利用条件编译，将其整合到一份代码中。
+
+4) 这样，对于代码的维护可能带来不便，也可能有隐含的Bug. 
+   
+5) 有后续的项目开发需求，如学生信息管理系统，希望可对此代码进行重用。
+
+Enjoy yourself.
+
+ 

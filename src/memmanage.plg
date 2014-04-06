@@ -1,0 +1,26 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: memmanage - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating temporary file "C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP55F.tmp" with contents
+[
+/nologo /MLd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_CONSOLE" /D "_MBCS" /FR"Debug/" /Fp"Debug/memmanage.pch" /YX /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"E:\Programming\Git\KR\Ph1\n20140404\wbxu_20140404\memmanage\memmanage.c"
+]
+Creating command line "cl.exe @C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\RSP55F.tmp" 
+<h3>Output Window</h3>
+Compiling...
+memmanage.c
+e:\programming\git\kr\ph1\n20140404\wbxu_20140404\memmanage\memmanage.c(266) : warning C4101: 'record' : unreferenced local variable
+
+
+
+<h3>Results</h3>
+memmanage.obj - 0 error(s), 1 warning(s)
+</pre>
+</body>
+</html>
